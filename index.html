@@ -53,15 +53,19 @@
       animation: slide-up 1s ease-out both;
     }
   </style>
-  <script>
-    function toggleMobileNav() {
-      const nav = document.getElementById('mobile-menu');
-      nav.classList.toggle('hidden');
-    }
-  </script>
+
 </head>
 
 <body class="h-full w-full bg-white">
+  <div id="mobile-menu"
+    class="sm:hidden fixed top-[10vh] left-0 w-full bg-black bg-opacity-90 text-white text-center py-4 hidden z-40">
+    <a href="#Home" class="block py-2 hover:text-rose-500">Home</a>
+    <a href="#page2" class="block py-2 hover:text-rose-500">About Us</a>
+    <a href="#page3" class="block py-2 hover:text-rose-500">Menu</a>
+    <a href="#page4" class="block py-2 hover:text-rose-500">Offers</a>
+    <a href="#page5" class="block py-2 hover:text-rose-500">Contact</a>
+    <a href="#page5" class="block py-2 hover:text-rose-500">Location</a>
+  </div>
 
   <div id="Home" class="relative min-h-screen w-full">
     <div class="absolute inset-0 bg-[url('image.png')] bg-cover bg-center bg-no-repeat"></div>
@@ -83,16 +87,6 @@
           <a href="#page5" class="hover:text-rose-500 transition">Location</a>
         </div>
         <button class="sm:hidden text-white text-3xl" onclick="toggleMobileNav()">☰</button>
-      </div>
-
-      <div id="mobile-menu"
-        class="sm:hidden absolute top-[10vh] left-0 w-full bg-black bg-opacity-90 text-white text-center py-4 hidden z-40">
-        <a href="#Home" class="block py-2 hover:text-rose-500">Home</a>
-        <a href="#page2" class="block py-2 hover:text-rose-500">About Us</a>
-        <a href="#page3" class="block py-2 hover:text-rose-500">Menu</a>
-        <a href="#page4" class="block py-2 hover:text-rose-500">Offers</a>
-        <a href="#page5" class="block py-2 hover:text-rose-500">Contact</a>
-        <a href="#page5" class="block py-2 hover:text-rose-500">Location</a>
       </div>
 
       <div id="page1" class="flex flex-col justify-center items-center h-screen text-center px-4 sm:px-8">
@@ -138,56 +132,124 @@
     </div>
   </div>
 
-  <div id="page3"
-    class="scroll-mt-[10vh] w-full min-h-screen grid grid-rows-[auto_1fr_auto] bg-gray-100 px-4 py-6 mb-16">
+<div id="page3" class="w-full scroll-mt-[10vh] min-h-screen px-4 py-8 bg-white text-center">
+  <h2 class="text-4xl font-bold text-center mb-6 text-amber-700">Our Best Sellers</h2>
 
-    <h1 class="mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-800 text-center">
-      Our Best Sellers
-    </h1>
+  <div class="relative">
+    <button onclick="slideLeft()"
+      class="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg p-2 rounded-full">
+      ◀
+    </button>
 
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+    <div class="overflow-hidden max-w-screen-lg mx-auto px-4">
+      <div class="grid grid-rows-2 gap-6">
 
-      <div class="bg-white shadow-md rounded-lg p-4">
-        <h2 class="text-lg md:text-xl font-semibold text-amber-700">Cheesy Margherita Pizza</h2>
-        <p class="text-sm text-gray-600 mt-1">Only cheese, no toppings – the classic favorite.</p>
-        <p class="text-amber-700 font-semibold text-lg mt-2">₹90</p>
-      </div>
-      <div class="bg-white shadow-md rounded-lg p-4">
-        <h2 class="text-lg md:text-xl font-semibold text-amber-700">Vegeterian Bite Pizza</h2>
-        <p class="text-sm text-gray-600 mt-1">Topped with Onion, Tomato & Capsicum.</p>
-        <p class="text-amber-700 font-semibold text-lg mt-2">₹110</p>
+        <div id="menuRow1" class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar">
+
+          <div class="min-w-[250px] w-[250px] bg-orange-50 rounded-xl shadow-md p-4 flex-shrink-0">
+            <img src="pizza.jpg" alt="Cheesy Margherita" class="w-full h-40 object-cover rounded-lg mb-2" />
+            <h3 class="text-lg font-semibold text-amber-700">Cheesy Margherita</h3>
+            <p class="text-sm text-gray-600 mt-1">Only cheese, no toppings – classic.</p>
+            <p class="text-amber-700 font-semibold mt-2">₹90</p>
+          </div>
+
+          <div class="min-w-[250px] w-[250px] bg-orange-50 rounded-xl shadow-md p-4 flex-shrink-0">
+            <img src="OTC.jpg" alt="Vegeterian Bite Pizza" class="w-full h-40 object-cover rounded-lg mb-2" />
+            <h3 class="text-lg font-semibold text-amber-700">Vegeterian Bite Pizza</h3>
+            <p class="text-sm text-gray-600 mt-1">Onion, tomato, capsicum fun.</p>
+            <p class="text-amber-700 font-semibold mt-2">₹110</p>
+          </div>
+
+          <div class="min-w-[250px] w-[250px] bg-orange-50 rounded-xl shadow-md p-4 flex-shrink-0">
+            <img src="Balle Balle.jpg" alt="Balle Balle Pizza" class="w-full h-40 object-cover rounded-lg mb-2" />
+            <h3 class="text-lg font-semibold text-amber-700">Balle Balle Pizza</h3>
+            <p class="text-sm text-gray-600 mt-1">Paneer chunks, bold spices.</p>
+            <p class="text-amber-700 font-semibold mt-2">₹130</p>
+          </div>
+
+          <div class="min-w-[250px] w-[250px] bg-orange-50 rounded-xl shadow-md p-4 flex-shrink-0">
+            <img src="special.jpg" alt="Special Pizza" class="w-full h-40 object-cover rounded-lg mb-2" />
+            <h3 class="text-lg font-semibold text-amber-700">Pizza Unlimited Special</h3>
+            <p class="text-sm text-gray-600 mt-1">Loaded with toppings delight.</p>
+            <p class="text-amber-700 font-semibold mt-2">₹199</p>
+          </div>
+
+          <div class="min-w-[250px] w-[250px] bg-orange-50 rounded-xl shadow-md p-4 flex-shrink-0">
+            <img src="white pasta.jpg" alt="White Pasta" class="w-full h-40 object-cover rounded-lg mb-2" />
+            <h3 class="text-lg font-semibold text-amber-700">White Pasta</h3>
+            <p class="text-sm text-gray-600 mt-1">Creamy pasta in white sauce.</p>
+            <p class="text-amber-700 font-semibold mt-2">₹109</p>
+          </div>
+
+          <div class="min-w-[250px] w-[250px] bg-orange-50 rounded-xl shadow-md p-4 flex-shrink-0">
+            <img src="mexican.jpg" alt="Mexican Noodles" class="w-full h-40 object-cover rounded-lg mb-2" />
+            <h3 class="text-lg font-semibold text-amber-700">Mexican Noodles</h3>
+            <p class="text-sm text-gray-600 mt-1">Spicy stir-fried desi noodles.</p>
+            <p class="text-amber-700 font-semibold mt-2">₹90</p>
+          </div>
+        </div>
+
+        <div id="menuRow2" class="flex gap-4 overflow-x-auto scroll-smooth no-scrollbar">
+
+          <div class="min-w-[250px] w-[250px] bg-orange-50 rounded-xl shadow-md p-4 flex-shrink-0">
+            <img src="Chatpata.jpg" alt="Chatpata Paneer" class="w-full h-40 object-cover rounded-lg mb-2" />
+            <h3 class="text-lg font-semibold text-amber-700">Chatpata Paneer</h3>
+            <p class="text-sm text-gray-600 mt-1">Tangy paneer with spicy kick.</p>
+            <p class="text-amber-700 font-semibold mt-2">₹140</p>
+          </div>
+
+          <div class="min-w-[250px] w-[250px] bg-orange-50 rounded-xl shadow-md p-4 flex-shrink-0">
+            <img src="Farm House.jpg" alt="Farm House Pizza" class="w-full h-40 object-cover rounded-lg mb-2" />
+            <h3 class="text-lg font-semibold text-amber-700">Farm House Pizza</h3>
+            <p class="text-sm text-gray-600 mt-1">Loaded veggies, crunchy taste.</p>
+            <p class="text-amber-700 font-semibold mt-2">₹150</p>
+          </div>
+
+          <div class="min-w-[250px] w-[250px] bg-orange-50 rounded-xl shadow-md p-4 flex-shrink-0">
+            <img src="chinese.jpg" alt="Chinese Noodles" class="w-full h-40 object-cover rounded-lg mb-2" />
+            <h3 class="text-lg font-semibold text-amber-700">Chinese Noodles</h3>
+            <p class="text-sm text-gray-600 mt-1">Spicy Chinese-style noodles.</p>
+            <p class="text-amber-700 font-semibold mt-2">₹90</p>
+          </div>
+
+          <div class="min-w-[250px] w-[250px] bg-orange-50 rounded-xl shadow-md p-4 flex-shrink-0">
+            <img src="red.jpg" alt="Red Pasta" class="w-full h-40 object-cover rounded-lg mb-2" />
+            <h3 class="text-lg font-semibold text-amber-700">Red Pasta</h3>
+            <p class="text-sm text-gray-600 mt-1">Creamy tomato red sauce pasta.</p>
+            <p class="text-amber-700 font-semibold mt-2">₹90</p>
+          </div>
+
+          <div class="min-w-[250px] w-[250px] bg-orange-50 rounded-xl shadow-md p-4 flex-shrink-0">
+            <img src="garlic bread.jpg" alt="Garlic Breads" class="w-full h-40 object-cover rounded-lg mb-2" />
+            <h3 class="text-lg font-semibold text-amber-700">Garlic Breads</h3>
+            <p class="text-sm text-gray-600 mt-1">Crispy buttery garlic delight.</p>
+            <p class="text-amber-700 font-semibold mt-2">₹120</p>
+          </div>
+
+          <div class="min-w-[250px] w-[250px] bg-orange-50 rounded-xl shadow-md p-4 flex-shrink-0">
+            <img src="Yummi Dummy.jpg" alt="Yummi Dummi Pizza" class="w-full h-40 object-cover rounded-lg mb-2" />
+            <h3 class="text-lg font-semibold text-amber-700">Yummi Dummi Pizza</h3>
+            <p class="text-sm text-gray-600 mt-1">Cheesy, spicy, bold & tasty mix.</p>
+            <p class="text-amber-700 font-semibold mt-2">₹140</p>
+          </div>
+        </div>
 
       </div>
-      <div class="bg-white shadow-md rounded-lg p-4">
-        <h2 class="text-lg md:text-xl font-semibold text-amber-700">Balle Balle Pizza</h2>
-        <p class="text-sm text-gray-600 mt-1">Delicious paneer chunks with bold spices.</p>
-        <p class="text-amber-700 font-semibold text-lg mt-2">₹130</p>
-      </div>
-      <div class="bg-white shadow-md rounded-lg p-4">
-        <h2 class="text-lg md:text-xl font-semibold text-amber-700">Pizza Unlimited Special</h2>
-        <p class="text-sm text-gray-600 mt-1">Loaded with all toppings – the ultimate pizza.</p>
-        <p class="text-amber-700 font-semibold text-lg mt-2">₹199</p>
-      </div>
-      <div class="bg-white shadow-md rounded-lg p-4">
-        <h2 class="text-lg md:text-xl font-semibold text-amber-700">White Pasta</h2>
-        <p class="text-sm text-gray-600 mt-1">Creamy, cheesy white sauce pasta.</p>
-        <p class="text-amber-700 font-semibold text-lg mt-2">₹109</p>
-      </div>
-      <div class="bg-white shadow-md rounded-lg p-4">
-        <h2 class="text-lg md:text-xl font-semibold text-amber-700">Mexican Noodles</h2>
-        <p class="text-sm text-gray-600 mt-1">Spicy Mexican-style stir-fried noodles.</p>
-        <p class="text-amber-700 font-semibold text-lg mt-2">₹90</p>
-      </div>
-
     </div>
 
-    <div class="mt-6 flex justify-center">
-      <a href="Pizza_Unlimited_Menu.pdf" target="_blank"
-        class="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-full font-semibold shadow-md transition duration-300">
-        View Full Menu
-      </a>
-    </div>
+    <button onclick="slideRight()"
+      class="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white shadow-lg p-2 rounded-full">
+      ▶
+    </button>
   </div>
+
+  <div class="mt-6 flex justify-center">
+    <a href="Pizza_Unlimited_Menu.pdf" target="_blank"
+      class="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-full font-semibold shadow-md transition duration-300">
+      View Full Menu
+    </a>
+  </div>
+</div>
 
   <div id="page4"
     class="scroll-mt-[12vh] mt-16 w-full min-h-screen grid grid-rows-[auto_1fr_auto] bg-white shadow-md py-6 pb-10">
