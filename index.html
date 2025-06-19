@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full w-full scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Pizza Unlimited</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fade-in-down {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes slide-up {
+      0% {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fade-in 1s ease-out both;
+    }
+
+    .animate-fade-in-down {
+      animation: fade-in-down 1s ease-out both;
+    }
+
+    .animate-slide-up {
+      animation: slide-up 1s ease-out both;
+    }
+  </style>
+  <script>
+    function toggleMobileNav() {
+      const nav = document.getElementById('mobile-menu');
+      nav.classList.toggle('hidden');
+    }
+  </script>
+</head>
+
+<body class="h-full w-full bg-white">
+
+  <div id="Home" class="relative min-h-screen w-full">
+    <div class="absolute inset-0 bg-[url('image.png')] bg-cover bg-center bg-no-repeat"></div>
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+
+    <div class="relative z-10">
+
+      <div id="header"
+        class="fixed top-0 left-0 w-full h-[10vh] flex justify-between items-center px-4 md:px-8 z-50 bg-black bg-opacity-40 backdrop-blur-md">
+        <a href="#page1" class="h-[60%] md:h-full">
+          <img class="h-full object-contain" src="unnamed1.png" alt="Logo" />
+        </a>
+        <div id="nav" class="hidden sm:flex gap-4 md:gap-6 text-sm md:text-lg font-medium text-white">
+          <a href="#Home" class="hover:text-rose-500 transition">Home</a>
+          <a href="#page2" class="hover:text-rose-500 transition">About Us</a>
+          <a href="#page3" class="hover:text-rose-500 transition">Menu</a>
+          <a href="#page4" class="hover:text-rose-500 transition">Offers</a>
+          <a href="#page5" class="hover:text-rose-500 transition">Contact</a>
+          <a href="#page5" class="hover:text-rose-500 transition">Location</a>
+        </div>
+        <button class="sm:hidden text-white text-3xl" onclick="toggleMobileNav()">☰</button>
+      </div>
+
+      <div id="mobile-menu"
+        class="sm:hidden absolute top-[10vh] left-0 w-full bg-black bg-opacity-90 text-white text-center py-4 hidden z-40">
+        <a href="#Home" class="block py-2 hover:text-rose-500">Home</a>
+        <a href="#page2" class="block py-2 hover:text-rose-500">About Us</a>
+        <a href="#page3" class="block py-2 hover:text-rose-500">Menu</a>
+        <a href="#page4" class="block py-2 hover:text-rose-500">Offers</a>
+        <a href="#page5" class="block py-2 hover:text-rose-500">Contact</a>
+        <a href="#page5" class="block py-2 hover:text-rose-500">Location</a>
+      </div>
+
+      <div id="page1" class="flex flex-col justify-center items-center h-screen text-center px-4 sm:px-8">
+        <h1
+          class="text-white text-3xl sm:text-4xl md:text-5xl font-bold drop-shadow-md leading-tight animate-fade-in-down">
+          Welcome To The Pizza Unlimited!!
+        </h1>
+        <h4
+          class="text-white text-base sm:text-lg md:text-xl drop-shadow-sm font-medium opacity-90 mt-4 animate-fade-in">
+          Unlimited Meals, Unbeatable Prices – Indulge in the Best of Italian & Chinese Cuisine!
+        </h4>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+          <a href="#page3"
+            class="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-full font-semibold shadow-md transition duration-300 transform hover:scale-105">
+            View Menu
+          </a>
+          <a target="_blank" href="https://www.zomato.com/jaipur/the-pizza-unlimited-sanganer/info"
+            class="px-6 py-3 bg-lime-600 hover:bg-lime-700 text-white rounded-full font-semibold shadow-md transition duration-300 transform hover:scale-105">
+            Grab Your Slice
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="page2" class="scroll-mt-[10vh] w-full grid grid-cols-1 md:grid-cols-2 p-8 h-[90vh] bg-white">
+
+    <div class="bg-gradient-to-br from-yellow-600 to-amber-700 flex items-center justify-center p-4">
+      <h1 class="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-extrabold text-white tracking-wide">
+        About Us
+      </h1>
+    </div>
+
+    <div class="bg-neutral-100 flex items-center justify-center p-6 border-l border-gray-300">
+      <p
+        class="text-base sm:text-lg md:text-xl text-gray-800 font-sans leading-relaxed max-w-prose text-justify px-4 md:px-8">
+        Since 2013, <span class="font-semibold text-amber-700">The Pizza Unlimited</span> has been serving the finest
+        Italian and Chinese cuisine, offering an unlimited dining experience at unbeatable prices. As the No.1 Pizza
+        Unlimited brand in Rajasthan, we have grown from a single outlet into a beloved national name, bringing joy to
+        food lovers across the country. Whether you’re in the mood for a cheesy pizza, a hearty pasta, or bold and
+        flavorful Chinese delights, we have something for everyone. Come indulge in a feast like no other!
+      </p>
+    </div>
+  </div>
+
+  <div id="page3"
+    class="scroll-mt-[10vh] w-full min-h-screen grid grid-rows-[auto_1fr_auto] bg-gray-100 px-4 py-6 mb-16">
+
+    <h1 class="mb-6 text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-800 text-center">
+      Our Best Sellers
+    </h1>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-6 mt-6">
+
+      <div class="bg-white shadow-md rounded-lg p-4">
+        <h2 class="text-lg md:text-xl font-semibold text-amber-700">Cheesy Margherita Pizza</h2>
+        <p class="text-sm text-gray-600 mt-1">Only cheese, no toppings – the classic favorite.</p>
+        <p class="text-amber-700 font-semibold text-lg mt-2">₹90</p>
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-4">
+        <h2 class="text-lg md:text-xl font-semibold text-amber-700">Vegeterian Bite Pizza</h2>
+        <p class="text-sm text-gray-600 mt-1">Topped with Onion, Tomato & Capsicum.</p>
+        <p class="text-amber-700 font-semibold text-lg mt-2">₹110</p>
+
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-4">
+        <h2 class="text-lg md:text-xl font-semibold text-amber-700">Balle Balle Pizza</h2>
+        <p class="text-sm text-gray-600 mt-1">Delicious paneer chunks with bold spices.</p>
+        <p class="text-amber-700 font-semibold text-lg mt-2">₹130</p>
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-4">
+        <h2 class="text-lg md:text-xl font-semibold text-amber-700">Pizza Unlimited Special</h2>
+        <p class="text-sm text-gray-600 mt-1">Loaded with all toppings – the ultimate pizza.</p>
+        <p class="text-amber-700 font-semibold text-lg mt-2">₹199</p>
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-4">
+        <h2 class="text-lg md:text-xl font-semibold text-amber-700">White Pasta</h2>
+        <p class="text-sm text-gray-600 mt-1">Creamy, cheesy white sauce pasta.</p>
+        <p class="text-amber-700 font-semibold text-lg mt-2">₹109</p>
+      </div>
+      <div class="bg-white shadow-md rounded-lg p-4">
+        <h2 class="text-lg md:text-xl font-semibold text-amber-700">Mexican Noodles</h2>
+        <p class="text-sm text-gray-600 mt-1">Spicy Mexican-style stir-fried noodles.</p>
+        <p class="text-amber-700 font-semibold text-lg mt-2">₹90</p>
+      </div>
+
+    </div>
+
+    <div class="mt-6 flex justify-center">
+      <a href="Pizza_Unlimited_Menu.pdf" target="_blank"
+        class="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-full font-semibold shadow-md transition duration-300">
+        View Full Menu
+      </a>
+    </div>
+  </div>
+
+  <div id="page4"
+    class="scroll-mt-[12vh] mt-16 w-full min-h-screen grid grid-rows-[auto_1fr_auto] bg-white shadow-md py-6 pb-10">
+    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-gray-800 text-center">
+      Our Best Unlimited Meal
+    </h1>
+
+    <div class="flex items-center justify-center">
+      <div class="bg-black text-white max-w-xl w-full p-6 rounded-xl shadow-lg mt-6">
+        <span class="inline-block bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-full mb-4">
+          MOST POPULAR
+        </span>
+
+        <h3 class="text-2xl font-bold text-yellow-400 mb-3">
+          Fully Loaded Unlimited Italian Meal
+        </h3>
+
+        <ul class="list-disc list-inside text-sm space-y-1 mb-4">
+          <li>2 Types of Soups</li>
+          <li>8 Types of Hot Starters</li>
+          <li>20 Types of Flavoured Salads</li>
+          <li><span class="text-yellow-300 font-semibold">Cheese Pizza</span> (Deep Pan)</li>
+          <li><span class="text-yellow-300 font-semibold">Paneer Pizza</span> (Deep Pan)</li>
+          <li><span class="text-yellow-300 font-semibold">Thin Crust Pizza</span></li>
+          <li><span class="text-yellow-300 font-semibold">Double Layer Pizza</span></li>
+          <li>Supreme Garlic Bread</li>
+          <li>Cold Drink (200ml) <span class="text-gray-400 text-xs">(Single Serve)</span></li>
+          <li>Dessert <span class="text-gray-400 text-xs">(Single Serve)</span></li>
+        </ul>
+
+        <div class="text-lg font-semibold text-amber-400 mb-1">
+          ₹209/- <span class="text-sm text-gray-300 font-normal">(Before 6 PM)</span>
+        </div>
+        <div class="text-lg font-semibold text-amber-400 mb-1">
+          ₹239/- <span class="text-sm text-gray-300 font-normal">(After 6 PM)</span>
+        </div>
+        <div class="text-sm text-gray-300 mb-1">
+          ₹189/- for Kids (3–9 years) <span class="text-xs">(Before 6 PM)</span>
+        </div>
+        <div class="text-sm text-gray-300 mb-3">
+          ₹209/- for Kids (3–9 years) <span class="text-xs">(After 6 PM)</span>
+        </div>
+
+        <p class="text-xs text-gray-400 italic">*Taxes Extra</p>
+      </div>
+    </div>
+
+    <div class="mt-6 flex justify-center">
+      <a href="unlimited.jpg" target="_blank"
+        class="px-6 py-3 bg-amber-600 hover:bg-amber-700 text-white rounded-full font-semibold shadow-md transition duration-300">
+        View All Unlimited Meals
+      </a>
+    </div>
+  </div>
+
+  <div id="page5" class="scroll-mt-[10vh] w-full h-[90vh] bg-gradient-to-br from-amber-100 to-rose-50
+ grid grid-cols-1 md:grid-cols-2 gap-4 p-4">
+
+    <div class="overflow-hidden rounded-xl shadow-lg h-full">
+      <img src="pizza.jpg" alt="Pizza" class="w-full h-full object-cover" />
+    </div>
+
+    <div class="grid grid-rows-2 gap-4 h-full">
+
+      <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 space-y-4">
+
+        <h1 class="text-3xl font-bold text-center text-rose-600 underline decoration-amber-500 mb-2">
+          Contact Us
+        </h1>
+
+        <div class="text-lg text-gray-700 flex items-center gap-2">
+          📞 <span class="font-semibold">Mobile:</span>
+          <a href="tel:+919823XXXXXX" class="text-blue-600 hover:underline">+91 9823xxxxxx</a>
+        </div>
+
+        <div class="text-lg text-gray-700 flex items-center gap-2">
+          📧 <span class="font-semibold">Email:</span>
+          <a href="mailto:pizzaunlimited@gmail.com" class="text-blue-600 hover:underline">pizzaunlimited@gmail.com</a>
+        </div>
+
+        <div class="text-lg text-gray-700 flex items-center gap-2">
+          🕒 <span class="font-semibold">Hours:</span> Mon–Sun | 11:00 AM – 11:00 PM
+        </div>
+
+        <div class="text-lg text-gray-700 flex items-center gap-2">
+          📸 <span class="font-semibold">Instagram:</span>
+          <a href="https://instagram.com/pizzaunlimited" target="_blank"
+            class="text-blue-600 hover:underline">@pizzaunlimited</a>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 space-y-6">
+
+        <h1 class="text-3xl font-bold text-center text-rose-600 underline decoration-amber-500">
+          Our Outlets
+        </h1>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+
+          <div class="text-gray-700 space-y-1">
+            <h2 class="text-lg font-semibold text-amber-700">📍 Main Branch</h2>
+            <p>123, Main Street, Your City, India</p>
+            <a href="https://www.google.com/maps" target="_blank" class="text-blue-600 hover:underline text-sm">View on
+              Map</a>
+          </div>
+
+          <div class="text-gray-700 space-y-1">
+            <h2 class="text-lg font-semibold text-amber-700">📍 Outlet 2</h2>
+            <p>456, Market Road, Another City, India</p>
+            <a href="https://www.google.com/maps" target="_blank" class="text-blue-600 hover:underline text-sm">View on
+              Map</a>
+          </div>
+
+          <div class="text-gray-700 space-y-1">
+            <h2 class="text-lg font-semibold text-amber-700">📍 Outlet 3</h2>
+            <p>789, College Circle, Townname, India</p>
+            <a href="https://www.google.com/maps" target="_blank" class="text-blue-600 hover:underline text-sm">View on
+              Map</a>
+          </div>
+
+          <div class="text-gray-700 space-y-1">
+            <h2 class="text-lg font-semibold text-amber-700">📍 Outlet 4</h2>
+            <p>101, Food Street, Newtown, India</p>
+            <a href="https://www.google.com/maps" target="_blank" class="text-blue-600 hover:underline text-sm">View on
+              Map</a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
